@@ -4,24 +4,36 @@
 
 package com.mycompany.icetask6;
 import java.util.Scanner; 
-import java.util.regex.*;
+
 
 /**
  *
  * @author RC_Student_lab
  */
 public class ICETASK6 {
+        public static int countVowels(String sentence) {
+        // Convert the sentence to lowercase to handle both upper and lowercase vowels
+        sentence = sentence.toLowerCase();
+int vowelCount = 0;
+ 
+        // Iterate through each character in the string
+        for (int i = 0; i < sentence.length(); i++) {
+            char ch = sentence.charAt(i);
+            if ("aeiou".indexOf(ch) != -1) {
+                vowelCount++;
+            }
+        }
+        return vowelCount;
+        }
 
     public static void main(String[] args) {
-        
+         String sentence = "Hello, welcome to the Java programming "; 
+
+        int numberOfVowels = countVowels(sentence); 
+
+  
+
+        System.out.println("The number of vowels in the sentence is: " + numberOfVowels); 
     }
-    public String countVowels(String sentence){
-        
-        String countVowels;
-       String regex = "aeiou";
-       Pattern p = Pattern.compile(regex);
-        System.out.println(countVowels.matches(regex));
-       
-        
-    }
+   
 }
